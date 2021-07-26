@@ -1,0 +1,17 @@
+        public static int powerranger(int n, double a, double b)
+        {
+            int count = 0;
+            for (int i = 1; Math.Pow(i, n) <= b; i++)
+            {
+                if (Math.Pow(i, n) >= a && Math.Pow(i, n) <= b)
+                {
+                    count++;
+
+                }
+
+
+            }
+            return count;
+
+
+        }
