@@ -1,0 +1,19 @@
+public static bool Cons(int[] arr)
+        {
+            Array.Sort(arr);
+            if (arr.Distinct().Count() == arr.Count())
+            {
+
+                for (int i = 1; i < arr.Length; i++)
+                {
+                    if (arr[i - 1] + 1 != arr[i])
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+            else return false;
+
+        }
