@@ -1,0 +1,41 @@
+	public static string Simplify(string str) 
+       
+       {
+           int[] arrOfnums = new int[str.Split("/").Length];
+           
+           int max = arrOfnums.Max();
+           for (int i = 0; i < str.Split("/").Length; i++)
+           {
+               arrOfnums[i] = Int32.Parse(str.Split("/")[i]);
+ 
+ 
+           }
+          
+           
+           if (arrOfnums[0] % arrOfnums[1] == 0)
+           {
+               int result = arrOfnums[0] / arrOfnums[1];
+               return result.ToString();
+           }
+           else
+           {
+               for (int min = arrOfnums.Min(); min > 0; min--)
+               {
+                   if (arrOfnums[0] % min == 0 && arrOfnums[1] % min == 0)
+                   {
+                       int numerator = arrOfnums[0] / min;
+                       int denominator = arrOfnums[1] / min;
+                       return numerator.ToString() + "/" + denominator.ToString();
+                   }
+               }
+ 
+ 
+           }
+          
+           
+ 
+ 
+           return "smthwrong";
+       
+       
+       }
