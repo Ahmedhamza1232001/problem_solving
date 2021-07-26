@@ -1,0 +1,30 @@
+public static bool CorrectestCannotCapture(int[,] board)
+        {
+            var moves = new List<int[]>() {
+                        new int[] { 2, 1 },
+                        new int[] { 1, 2 },
+                        new int[] { -2, 1 },
+                        new int[] { -1, 2 },
+                        new int[] { -2, 1 },
+                        new int[] { -1, 2 },
+                        new int[] { -2, -1 },
+                        new int[] { -1, -2 }
+                };
+
+            Func<int, int, bool> cancapture = (r, c) =>
+            {
+                return moves.Any(d => (r + d[0]) >= 0 && (r + d[0]) < 8 && (c + d[1]) >= 0 && (c + d[1]) < 8 && board[r + d[0], c + d[1]] == 1);
+            };
+
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (board[i, j] == 1 && cancapture(i, j))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
