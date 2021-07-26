@@ -1,0 +1,23 @@
+        public static string Interview(int[] arr, int tot)
+        {
+            if (arr[1] <= 5 && arr[2] <= 5 &&
+               arr[3] <= 10 && arr[4] <= 10 &&
+               arr[5] <= 15 && arr[6] <= 15 &&
+               arr[7] <= 20 && arr[8] <= 20 &&
+               tot <= 12
+               )
+            {
+                Console.WriteLine(arr.Sum());
+                return "qualified";
+
+            }
+            else
+            {
+                Console.WriteLine(arr.Sum());
+                return "disqualified";
+            }
+
+
+
+
+        }
